@@ -1,0 +1,17 @@
+{
+  email jacksmahoney@gmail.com
+}
+
+lg.jackmhny.xyz {
+  handle_path /jellyfin/* {
+    reverse_proxy localhost:8096
+  }
+  handle_path /qb/* {
+    reverse_proxy localhost:8080
+  }
+  handle {
+    root * /srv
+    file_server
+  }
+}
+
