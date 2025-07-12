@@ -53,3 +53,7 @@ portainer-data/
 *.tmp
 
 
+jackett-config/Jackett/ServerConfig.json
+radarr-config/config.xml
+sonarr-config/config.xml
+qbittorrent-config/qBittorrent/qBittorrent.conf
