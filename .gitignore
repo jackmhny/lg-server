@@ -45,7 +45,11 @@ sonarr-config/sonarr.pid
 sonarr-config/Sentry/
 sonarr-config/asp/
 
+# Portainer runtime data
+portainer-data/
+
 # OS/editor temp files
 *.swp
 *.tmp
+
 
