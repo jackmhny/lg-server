@@ -19,20 +19,27 @@
             max-height: 400px;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 30px;
         }
         ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         li {
             margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
         }
         a {
             color: #fff;
             text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
         }
         a:hover {
             color: #ccc;
@@ -41,16 +48,43 @@
             color: #888;
             text-decoration: line-through;
         }
+        .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 10px;
+            fill: #fff;
+            position: relative;
+            top: 0.1em;
+        }
+        a:hover .icon {
+            fill: #ccc;
+        }
     </style>
 </head>
 <body>
+    <!-- SVG Sprite Sheet -->
+    <svg width="0" height="0" style="display: none;">
+        <symbol id="icon-tv" viewBox="0 0 24 24">
+            <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+        </symbol>
+        <symbol id="icon-download" viewBox="0 0 24 24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </symbol>
+        <symbol id="icon-chart" viewBox="0 0 24 24">
+            <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
+        </symbol>
+        <symbol id="icon-container" viewBox="0 0 24 24">
+            <path d="M22 8.45c0-.86-.54-1.63-1.34-1.95L12.5 2.2c-.4-.16-.8-.16-1.2 0L3.34 6.5C2.54 6.82 2 7.59 2 8.45v7.1c0 .86.54 1.63 1.34 1.95l8.16 4.3c.4.21.8.21 1.2 0l8.16-4.3c.8-.32 1.34-1.09 1.34-1.95V8.45zm-10.25 9.9L4 14.23v-5.7l7.75 4.12v5.78zm0-7.22L4.26 7.23l7.75-3.23l7.49 3.23l-7.5 3.99zM20 14.23l-7.75 4.12v-5.78l7.75-4.12v5.78z"/>
+        </symbol>
+    </svg>
+
     <img src="/images/lg-guillotine.webp" alt="LG Gram in a guillotine">
     <h1>Headless Laptop Server</h1>
     <ul>
-        <li><a href="/jellyfin/">Jellyfin</a></li>
-        <li><a href="/qb/">qBittorrent</a></li>
-        <li><a href="/netdata/">Netdata</a></li>
-        <li><a href="/portainer/">Portainer</a></li>
+        <li><a href="/jellyfin/"><svg class="icon"><use href="#icon-tv"></use></svg>Jellyfin</a></li>
+        <li><a href="/qb/"><svg class="icon"><use href="#icon-download"></use></svg>qBittorrent</a></li>
+        <li><a href="/netdata/"><svg class="icon"><use href="#icon-chart"></use></svg>Netdata</a></li>
+        <li><a href="/portainer/"><svg class="icon"><use href="#icon-container"></use></svg>Portainer</a></li>
         <li class="de-emphasized">Sonarr</li>
         <li class="de-emphasized">Radarr</li>
         <li class="de-emphasized">Jackett</li>
