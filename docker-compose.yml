@@ -68,7 +68,40 @@ services:
       - TZ=America/Los_Angeles
     volumes:
       - /opt/server/jackett-config:/config
-      - /mnt/ssd/downloads:/downloads    # optional, for indexer testing
-    network_mode: host                  # so it can talk to qBittorrent on localhost
+      - /mnt/ssd/downloads:/downloads
+    network_mode: host
     restart: unless-stopped
 
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/server/portainer-data:/data
+    ports:
+      - 9000:9000
+    restart: unless-stopped
+  netdata:
+    image: netdata/netdata:latest
+    container_name: netdata
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    security_opt:
+      - apparmor=unconfined
+    ports:
+      - 19999:19999
+    volumes:
+      - netdataconfig:/etc/netdata
+      - netdatalib:/var/lib/netdata
+      - netdatacache:/var/cache/netdata
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+
+volumes:
+  netdataconfig:
+  netdatalib:
+  netdatacache:

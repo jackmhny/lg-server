@@ -3,12 +3,42 @@
 }
 
 lg.jackmhny.xyz {
+	# Jellyfin
 	handle_path /jellyfin/* {
 		reverse_proxy localhost:8096
 	}
+
+	# qBittorrent Web UI
 	handle_path /qb/* {
 		reverse_proxy localhost:8080
 	}
+
+	# Sonarr
+	handle_path /sonarr/* {
+		reverse_proxy localhost:8989
+	}
+
+	# Radarr
+	handle_path /radarr/* {
+		reverse_proxy localhost:7878
+	}
+
+	# Jackett
+	handle_path /jackett/* {
+		reverse_proxy localhost:9117
+	}
+
+	# Netdata (metrics)
+	handle_path /netdata/* {
+		reverse_proxy localhost:19999
+	}
+
+	# Portainer (Docker management)
+	handle_path /portainer/* {
+		reverse_proxy localhost:9000
+	}
+
+	# Static site fallback
 	handle {
 		root * /srv
 		file_server
