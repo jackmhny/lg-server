@@ -1,23 +1,51 @@
-jackett-config/Jackett/ClientCertificates
-jackett-config/Jackett/Indexers
+# Caddy and Compose files
+!.gitignore
+!/caddy/Caddyfile
+!/docker-compose.yml
+!/site/index.html
+!/site/images/
+
+# Jackett configs (only keep ServerConfig.json)
+jackett-config/Jackett/DataProtection/
+jackett-config/Jackett/Indexers/
+jackett-config/Jackett/log.txt
+
+# Jellyfin configs (keep only config/, ignore data/, logs, metadata, plugins, root)
 jellyfin-config/data/
 jellyfin-config/log/
 jellyfin-config/metadata/
 jellyfin-config/plugins/
 jellyfin-config/root/
-qbittorrent-config/qBittorrent/BT_backup
-qbittorrent-config/qBittorrent/BT_clientState.xml
-qbittorrent-config/qBittorrent/BT_backup
+
+# qBittorrent configs (keep qBittorrent.conf and scripts, ignore cache & data)
+qbittorrent-config/qBittorrent/BT_backup/
+qbittorrent-config/qBittorrent/GeoDB/
+qbittorrent-config/qBittorrent/ipc-socket
+qbittorrent-config/qBittorrent/lockfile
+qbittorrent-config/qBittorrent/logs/
+qbittorrent-config/qBittorrent/rss/
+qbittorrent-config/qBittorrent/watched_folders.json
+qbittorrent-config/qBittorrent/qBittorrent-data.conf
+
+# Radarr configs (keep config.xml, ignore logs, database, MediaCover, asp)
 radarr-config/logs/
 radarr-config/*.db
 radarr-config/*.db-shm
 radarr-config/*.db-wal
 radarr-config/radarr.pid
+radarr-config/MediaCover/
+radarr-config/asp/
+
+# Sonarr configs (keep config.xml, ignore logs, database, Sentry, asp)
 sonarr-config/logs/
 sonarr-config/*.db
 sonarr-config/*.db-shm
 sonarr-config/*.db-wal
 sonarr-config/sonarr.pid
+sonarr-config/Sentry/
+sonarr-config/asp/
 
+# OS/editor temp files
 *.swp
 *.tmp
+
