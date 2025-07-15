@@ -44,6 +44,7 @@ sonarr-config/*.db-wal
 sonarr-config/sonarr.pid
 sonarr-config/Sentry/
 sonarr-config/asp/
+sonarr-config/MediaCover/
 
 # Portainer runtime data
 portainer-data/
