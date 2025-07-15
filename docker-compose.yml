@@ -28,8 +28,8 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./site:/srv:ro
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv/site:ro
 
   sonarr:
     image: linuxserver/sonarr:latest
@@ -101,7 +101,32 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
 
+  swabscan_qdrant:
+    image: qdrant/qdrant:latest
+    container_name: swabscan_qdrant
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - swabscan_qdrant_data:/qdrant/storage
+
+  swabscan_app:
+    build:
+      context: /opt/swabscan
+      dockerfile: Dockerfile
+    container_name: swabscan_app
+    restart: unless-stopped
+    network_mode: host           # Streamlit listens on 0.0.0.0:8501
+    environment:
+      QDRANT_URL: "http://127.0.0.1:6333"
+    volumes:
+      - /mnt/ssd2/pduddy:/app/input:ro
+      - /opt/swabscan:/app
+
+
 volumes:
   netdataconfig:
   netdatalib:
   netdatacache:
+  swabscan_qdrant_data:
+    external: true
+

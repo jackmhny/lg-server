@@ -38,6 +38,11 @@ lg.jackmhny.xyz {
 		reverse_proxy localhost:9000
 	}
 
+	# SwabScan face‐search UI
+    	handle_path /swabscan/* {
+       		reverse_proxy localhost:8501
+    	}
+
 	# Static site fallback
 	handle {
 		root * /srv
