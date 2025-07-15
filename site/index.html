@@ -65,20 +65,43 @@
     <!-- SVG Sprite Sheet -->
     <svg width="0" height="0" style="display: none;">
         <symbol id="icon-tv" viewBox="0 0 24 24">
-            <path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/>
+          <path stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            d="M3 8.25h18M12 12.75v.004M21 16.5V8.25a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 8.25v8.25A2.25 2.25 0 005.25 18.75h13.5A2.25 2.25 0 0021 16.5z"/>
         </symbol>
         <symbol id="icon-download" viewBox="0 0 24 24">
-            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+          <path stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            d="M7.5 12.75l4.5 4.5 4.5-4.5M12 3v13.5M5.25 19.5h13.5"/>
         </symbol>
         <symbol id="icon-chart" viewBox="0 0 24 24">
-            <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
+          <path stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            d="M3 3v18h18M9 14.25l3-3 2.25 2.25 3-3"/>
         </symbol>
         <symbol id="icon-container" viewBox="0 0 24 24">
-            <path d="M22 8.45c0-.86-.54-1.63-1.34-1.95L12.5 2.2c-.4-.16-.8-.16-1.2 0L3.34 6.5C2.54 6.82 2 7.59 2 8.45v7.1c0 .86.54 1.63 1.34 1.95l8.16 4.3c.4.21.8.21 1.2 0l8.16-4.3c.8-.32 1.34-1.09 1.34-1.95V8.45zm-10.25 9.9L4 14.23v-5.7l7.75 4.12v5.78zm0-7.22L4.26 7.23l7.75-3.23l7.49 3.23l-7.5 3.99zM20 14.23l-7.75 4.12v-5.78l7.75-4.12v5.78z"/>
+          <path stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            d="M3 7.5l9-4.5 9 4.5v9l-9 4.5-9-4.5v-9zM12 3.75v16.5M3 7.5l9 4.5 9-4.5"/>
         </symbol>
-	<symbol id="icon-swabscan" viewBox="0 0 24 24">
-      		<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-    	</symbol>
+        <symbol id="icon-scan" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </symbol>
+        <symbol id="icon-user-search" viewBox="0 0 24 24">
+          <!-- person head -->
+          <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0-8 0"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <!-- person body -->
+          <path d="M6 21v-2a4 4 0 0 1 4-4h1.5"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <!-- magnifier lens -->
+          <circle cx="18" cy="18" r="3"
+                  fill="none" stroke="currentColor" stroke-width="2"/>
+          <!-- magnifier handle -->
+          <line x1="20.5" y1="20.5" x2="22.5" y2="22.5"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </symbol>
+        <symbol id="icon-arr" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.652a3.75 3.75 0 0 1 0-5.304m5.304 0a3.75 3.75 0 0 1 0 5.304m-7.425 2.121a6.75 6.75 0 0 1 0-9.546m9.546 0a6.75 6.75 0 0 1 0 9.546M5.106 18.894c-3.808-3.807-3.808-9.98 0-13.788m13.788 0c3.808 3.807 3.808 9.98 0 13.788M12 12h.008v.008H12V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+        </symbol>
+
+
     </svg>
 
     <img src="/images/lg-guillotine.webp" alt="LG Gram in a guillotine">
@@ -88,9 +111,9 @@
         <li><a href="/qb/"><svg class="icon"><use href="#icon-download"></use></svg>qBittorrent</a></li>
         <li><a href="/netdata/"><svg class="icon"><use href="#icon-chart"></use></svg>Netdata</a></li>
         <li><a href="/portainer/"><svg class="icon"><use href="#icon-container"></use></svg>Portainer</a></li>
-	<li><a href="/swabscan/"> <svg class="icon"><use href="#icon-swabscan"></use></svg> SwabScan </a> </li>
-        <li><a href="/sonarr/"><svg class="icon"><use href="#icon-tv"></use></svg>Sonarr</a></li>
-        <li><a href="/radarr/"><svg class="icon"><use href="#icon-tv"></use></svg>Radarr</a></li>
+        <li><a href="/swabscan/"><svg class="icon"><use href="#icon-user-search"></use></svg>SwabScan</a></li>
+        <li><a href="/sonarr/"><svg class="icon"><use href="#icon-arr"></use></svg>Sonarr</a></li>
+        <li><a href="/radarr/"><svg class="icon"><use href="#icon-arr"></use></svg>Radarr</a></li>
     </ul>
 </body>
 </html>
