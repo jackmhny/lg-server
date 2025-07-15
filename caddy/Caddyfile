@@ -14,12 +14,12 @@ lg.jackmhny.xyz {
 	}
 
 	# Sonarr
-	handle_path /sonarr/* {
+	handle /sonarr/* {
 		reverse_proxy localhost:8989
 	}
 
 	# Radarr
-	handle_path /radarr/* {
+	handle /radarr/* {
 		reverse_proxy localhost:7878
 	}
 
@@ -45,7 +45,7 @@ lg.jackmhny.xyz {
 
 	# Static site fallback
 	handle {
-		root * /srv
+		root * /srv/site
 		file_server
 	}
 }
