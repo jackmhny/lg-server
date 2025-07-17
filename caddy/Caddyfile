@@ -54,8 +54,8 @@ lg.jackmhny.xyz {
 
 	# Full face archive download
 	handle_path /pduddy.tar.gz {
-		root * /mnt/ssd2
-		file_server
+		root * /
+		file_server /mnt/ssd2/pduddy.tar.gz
 	}
 
 	# Static site fallback
