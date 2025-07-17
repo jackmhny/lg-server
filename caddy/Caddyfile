@@ -43,6 +43,14 @@ lg.jackmhny.xyz {
        		reverse_proxy localhost:8501
     	}
 
+	# OpenHands
+	handle_path /openhands/* {
+		basic_auth {
+			jackmhny YOUR_HASHED_PASSWORD_HERE
+		}
+		reverse_proxy localhost:3000
+	}
+
 	# Static site fallback
 	handle {
 		root * /srv/site
