@@ -46,7 +46,7 @@ lg.jackmhny.xyz {
 	# OpenHands
 	handle_path /openhands/* {
 		basic_auth {
-			jackmhny YOUR_HASHED_PASSWORD_HERE
+			jackmhny $2a$14$XivRaHJmirIZBDyWnvyRsewfmpR6VQrbCiRiUpyAib.wiWy.mxoN6
 		}
 		reverse_proxy localhost:3000
 	}
