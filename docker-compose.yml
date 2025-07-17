@@ -46,6 +46,7 @@ services:
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./site:/srv/site:ro
+      - /mnt/ssd2/pduddy.tar.gz:/srv/site/pduddy.tar.gz:ro
 
   sonarr:
     image: linuxserver/sonarr:latest
@@ -145,4 +146,3 @@ volumes:
   netdatacache:
   swabscan_qdrant_data:
     external: true
-
