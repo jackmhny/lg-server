@@ -51,6 +51,12 @@ lg.jackmhny.xyz {
 		reverse_proxy localhost:3000
 	}
 
+	# Full face archive download
+	handle_path /pduddy.tar.gz {
+		root * /mnt/ssd2
+		file_server
+	}
+
 	# Static site fallback
 	handle {
 		root * /srv/site

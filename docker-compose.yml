@@ -46,7 +46,7 @@ services:
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./site:/srv/site:ro
-      - /mnt/ssd2/pduddy.tar.gz:/srv/site/pduddy.tar.gz:ro
+      - /mnt/ssd2:/mnt/ssd2:ro
 
   sonarr:
     image: linuxserver/sonarr:latest
