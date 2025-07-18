@@ -44,14 +44,6 @@ lg.jackmhny.xyz {
        		reverse_proxy localhost:8501
     	}
 
-	# OpenHands
-	handle_path /openhands/* {
-		basic_auth {
-			jackmhny $2a$14$XivRaHJmirIZBDyWnvyRsewfmpR6VQrbCiRiUpyAib.wiWy.mxoN6
-		}
-		reverse_proxy localhost:3000
-	}
-
 	# Full face archive download
 	handle /pduddy.tar.gz {
 		root * /mnt/ssd2
