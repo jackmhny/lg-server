@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - /mnt/ssd:/media
+      - /mnt/ssd2:/media
       - ./jellyfin-config:/config
 
   qbittorrent:
@@ -19,7 +19,7 @@ services:
       - TZ=America/Los_Angeles
       - WEBUI_PORT=8080
     volumes:
-      - /mnt/ssd/downloads:/downloads
+      - /mnt/ssd2/downloads:/downloads
       - ./qbittorrent-config:/config
 
   caddy:
@@ -41,8 +41,8 @@ services:
       - TZ=America/Los_Angeles
     volumes:
       - /opt/server/sonarr-config:/config
-      - /mnt/ssd/downloads:/downloads
-      - /mnt/ssd/TV:/tv
+      - /mnt/ssd2/downloads:/downloads
+      - /mnt/ssd2/TV:/tv
     network_mode: host
     restart: unless-stopped
 
@@ -55,8 +55,8 @@ services:
       - TZ=America/Los_Angeles
     volumes:
       - /opt/server/radarr-config:/config
-      - /mnt/ssd/downloads:/downloads
-      - /mnt/ssd/Movies:/movies
+      - /mnt/ssd2/downloads:/downloads
+      - /mnt/ssd2/Movies:/movies
     network_mode: host
     restart: unless-stopped
 
@@ -69,7 +69,7 @@ services:
       - TZ=America/Los_Angeles
     volumes:
       - /opt/server/jackett-config:/config
-      - /mnt/ssd/downloads:/downloads
+      - /mnt/ssd2/downloads:/downloads
     network_mode: host
     restart: unless-stopped
 
