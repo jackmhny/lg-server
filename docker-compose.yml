@@ -22,16 +22,6 @@ services:
       - /mnt/ssd2/downloads:/downloads
       - ./qbittorrent-config:/config
 
-  caddy:
-    image: caddy:latest
-    container_name: caddy
-    restart: unless-stopped
-    network_mode: host
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - ./site:/srv/site:ro
-      - /mnt/ssd2:/mnt/ssd2:ro
-
   sonarr:
     image: linuxserver/sonarr:latest
     container_name: sonarr
